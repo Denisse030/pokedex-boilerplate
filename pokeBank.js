@@ -84,3 +84,16 @@ const data = [
       image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/249.png",
     },
   ];
+
+  const list = () => {
+    return [...data]; // Notice that we're returning a copy of the array, so the original data is safe. This is called 'immutability'.
+  };
+  
+  const find = (id) => {
+    const pokemon = data.find((pokemon) => pokemon.id === +id);
+    return { ...pokemon }; // Again, we copy the post data before returning so the original information is safe.
+  };
+  
+  module.exports = { list: list, find: find };
+
+  
